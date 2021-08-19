@@ -8,3 +8,4 @@ x = sh(returnStdout: true, script: "echo value").trim()  // capture shell output
 stash(includes: "target/", name: "build_output")  // stashes a workspace artifact (such as "target/") between stages/workers in a jenkins pipeline.
 unstash("build_output")  // retrieves above stashed artifact to current workspace.
 sh("mvn help:effective-pom -Doutput=/tmp/effective-pom.xml")  // save effective-pom.xml to output file.
+

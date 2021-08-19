@@ -1,4 +1,4 @@
-#KUBERNETES
+# k8s
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml  # setup monitoring with metrics-server, then can use `kubectl top ...`.
 kubectl get pods -o custom-columns='NAME:metadata.name,IMAGE:spec.containers[*].image'  # list images used in all containers in all pods.
 kubectl get svcs -o custom-columns='NAME:.metadata.name,PORTS:.spec.ports[*].port' svc  # get all external ports of all services.
@@ -11,7 +11,8 @@ kubectl port-forward svc/kibana 5601  # expose kibana service over localhost:560
 kubectl port-forward PODNAME HOSTPORT:PODPORT  # forward a port from within a pod (its container) to my localhost.
 kubectl exec -it mongodb-7749784fc4-98x2s -- mongodump -u mongo -p password --archive --gzip | aws s3 cp - s3://my-mongo-dumps/$(date +'%Y-%m-%d').tar.gz --storage-class STANDARD_IA --sse  # backup mongo tables and save to s3 bucket.
 
-# MINIKUBE
+# minikube
 eval $(minikube docker-env)  # exports the minikube VM to local env, in which we can (for instance) build a docker image directly into minikube.
 minikube service SERVICENAME --url  # display the relative local url for SERVICENAME on minikube node.
 minikube tunnel  # TBD
+
