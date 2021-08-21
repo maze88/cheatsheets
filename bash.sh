@@ -1,12 +1,12 @@
 # system
-sudo dd bs=4M if=~/Downloads/SOME_IMAGE.iso of=/dev/sdXX status=progress conv=fdatasync  # burn SOME_IMAGE onto flash device /dev/sdXX.
-lsb_release -a  # show linux software base release details.
-cat /etc/os-release  # show os details
+sudo dd bs=4M if=~/Downloads/IMAGE.iso of=/dev/sdXX status=progress conv=fsync  # create a bootable usb from an imamge (first identify ouput file device using `lsblk`, then unmount with `sudo umount /dev/sdXX`)
 uname -a  # show system information.
+cat /etc/os-release  # show os details
+lsb_release -a  # show linux software base release details.
 last  # Show a listing of last logged in users.
-history -d N  # deletes the Nth entry from history (for example a plain text password).
 ls $(echo $PATH | tr ':' ' ') | grep -v '/' | grep . | sort  # list all commands by name
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)  # show all manually installed packages.
+history -d N  # deletes the Nth entry from history (for example a plain text password).
 usermod -aG docker $USER  # run docker without sudo prefix.
 gnome-session-quit  # lock session when top menu bar isn't responding.
 echo $XDG_SESSION_TYPE  # check diplay server type
