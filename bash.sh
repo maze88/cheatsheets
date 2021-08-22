@@ -59,6 +59,8 @@ ssh-copy-id -i ~/.ssh/a.key.pub user@host  # given a username, host and public k
 ssh-keygen -y -f ~/.ssh/my.key > ~/.ssh/my.key.pub  # generate a public key file from a private key.
 
 # gpg
+gpp --export --armor --output NAME.gpg.pub KEY_NAME  # export public key component from KEY_NAME to file starting with NAME.
+gpg --export-secret-keys --output --armor NAME.gpg KEY_NAME  # export private key component from KEY_NAME to file starting with NAME.
 gpg --list-keys --keyid-format LONG  # list keys with long id format, good for getting long key id for configuring gitconfig to sign commits.
 
 # misc
