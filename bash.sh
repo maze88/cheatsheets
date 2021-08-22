@@ -58,6 +58,9 @@ certbot certonly --webroot --webroot-path /var/www/html/ --renew-by-default --em
 ssh-copy-id -i ~/.ssh/a.key.pub user@host  # given a username, host and public key, it prompts for a password and adds the public key to the host's authorized_keys file.
 ssh-keygen -y -f ~/.ssh/my.key > ~/.ssh/my.key.pub  # generate a public key file from a private key.
 
+# gpg
+gpg --list-keys --keyid-format LONG  # list keys with long id format, good for getting long key id for configuring gitconfig to sign commits.
+
 # misc
 curl wttr.in/london?format=4  # get one line format of weather and wind for location.
 youtube-dl -x --audio-format mp3 --audio-quality 0 https://www.youtube.com/watch?v=ID  # extract and download best mp3 audio quality from link.

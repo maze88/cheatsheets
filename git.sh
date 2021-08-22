@@ -5,4 +5,5 @@ git revert HEAD~1  # make a new commit that reverts the previous one.
 git describe --tag --abbrev=0 --candidates=1  # prints the most recent git tag (preferable for this branch).
 git describe --tag `git rev-list --tags --max-count=1`  # prints the most recent tag reachable.
 git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'  # experimental command for looking up "parent" branch of current commit.
+git config --global gpg.program "$(which gpg)"; git config --global commit.gpgsign true; git config --global user.signingkey LONG_KEY_ID  # configure git to always sign commits using gpg key with id LONG_KEY_ID.
 
