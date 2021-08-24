@@ -8,4 +8,4 @@ git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head
 git config --global gpg.program "$(which gpg)"  # configure git to sign commits using gpg.
 git config --global commit.gpgsign true  # configure git to always sign commits.
 git config --global user.signingkey LONG_KEY_ID  # configure git to sign commits with id LONG_KEY_ID.
-
+git commit --ammend --no-edit  # update the last *local* commit, without changing its message (remember to `git add` first).
