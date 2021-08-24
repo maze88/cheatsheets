@@ -12,6 +12,7 @@ gnome-session-quit  # lock session when top menu bar isn't responding.
 echo $XDG_SESSION_TYPE  # check diplay server type
 sudo sed -i -E 's/.+(set bell-style none)/\1/' /etc/inputrc  # disable annoying bell in bash.
 xhost +SI:localuser:root  # allow root to run gui based apps in wayland.
+gsettings set org.gnome.shell.app-switcher current-workspace-only true  # makes application switcher will cycle only through applications in current workspace.
 
 # files
 rename -v 's/OLD/NEW/' **  # substitute all OLD to NEW in all (**) files and folders here. Use -n for dry-run.
