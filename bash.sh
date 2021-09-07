@@ -20,12 +20,14 @@ shred -uz -v FILE  # unrecoverably remove FILE, verbosely.
 tail -n +2  # outputs from the 2nd line and below.
 
 # compressed files
-tar -xvzf ARCHIVE  # eXtract ARCHIVE's contents.
-tar -C ./EXISTING_FOLDER -xvf TARBALL.tar.gz  # extract tarball TARBALL to EXISTING_FOLDER.
-zip -e SECURE.zip A B C  # zip files A, B and C into password encrypted zipfile SECURE.zip.
-zipinfo ZIPFILE.zip  # list contents of a zipfile ZIPFILE.zip.
+tar -xvzf ARCHIVE.tar.gz  # eXtract ARCHIVE.tar.gz's contents with tar and gunzip.
+tar -C ./EXISTING_FOLDER -xvzf TARBALL.tar.gz  # extract tarball TARBALL to EXISTING_FOLDER.
 gunzip ARCHIVE.gz  # unzip gzip ARCHIVE.
 bunzip2 ARCHIVE  # unzip ARCHIVE.
+zip STUFF.zip A B C  # zips all local files A, B and C into STUFF.zip.
+zip -e SECURE.zip *.pem *.txt  # zips all local pem and txt files into password encrypted zipfile SECURE.zip.
+zipinfo ZIPFILE.zip  # list contents of a zipfile ZIPFILE.zip.
+unzip STUFF.zip  # extracts contents of STUFF.zip to current folder.
 
 # network
 nc -lp PORT  # listens on port PORT for connections.
