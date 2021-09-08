@@ -60,6 +60,7 @@ certbot certonly --webroot --webroot-path /var/www/html/ --renew-by-default --em
 # ssh
 ssh-copy-id -i ~/.ssh/a.key.pub user@host  # given a username, host and public key, it prompts for a password and adds the public key to the host's authorized_keys file.
 ssh-keygen -y -f ~/.ssh/my.key > ~/.ssh/my.key.pub  # generate a public key file from a private key.
+# if a dropped ssh session locks, it can be killed by pressing `<enter>~.` (source: https://askubuntu.com/questions/29942/how-can-i-break-out-of-ssh-when-it-locks).
 
 # gpg
 gpp --export --armor --output NAME.gpg.pub KEY_NAME  # export public key component from KEY_NAME to file starting with NAME.
