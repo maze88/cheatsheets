@@ -1,18 +1,18 @@
 # system
+sudo -e /etc/hosts  # edit /etc/hosts as root
 sudo dd bs=4M if=~/Downloads/IMAGE.iso of=/dev/sdXX status=progress conv=fsync  # create a bootable usb from an imamge (first identify ouput file device using `lsblk`, then unmount with `sudo umount /dev/sdXX`)
 uname -a  # show system information.
-cat /etc/os-release  # show os details
 lsb_release -a  # show linux software base release details.
+gsettings set org.gnome.shell.app-switcher current-workspace-only true  # makes application switcher will cycle only through applications in current workspace.
 last  # Show a listing of last logged in users.
 ls $(echo $PATH | tr ':' ' ') | grep -v '/' | grep . | sort  # list all commands by name
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)  # show all manually installed packages.
 history -d N  # deletes the Nth entry from history (for example a plain text password).
-usermod -aG docker $USER  # run docker without sudo prefix.
-gnome-session-quit  # lock session when top menu bar isn't responding.
+usermod -aG docker $USER  # append $USER to group docker.
+gnome-session-quit  # lock session.
 echo $XDG_SESSION_TYPE  # check diplay server type
 sudo sed -i -E 's/.+(set bell-style none)/\1/' /etc/inputrc  # disable annoying bell in bash.
 xhost +SI:localuser:root  # allow root to run gui based apps in wayland.
-gsettings set org.gnome.shell.app-switcher current-workspace-only true  # makes application switcher will cycle only through applications in current workspace.
 
 # files
 rename -v 's/OLD/NEW/' **  # substitute all OLD to NEW in all (**) files and folders here. Use -n for dry-run.

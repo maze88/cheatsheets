@@ -1,7 +1,13 @@
 :set paste  " allows correct pasting into vim when auto-indent is on.
-5 >>  " indents 5 lines in by $shiftwidth (configured in vimrc).
-ctrl+t  " in insert mode, indents line by $shiftwidth
-ctrl+d  " in insert mode, outdents line by $shiftwidth
-sudo -e /etc/hosts  " edit /etc/hosts as root
-sudo -E vim /etc/hosts  " edit /etc/hosts by running vim as root, but preserve current user's environment and ~/.vimrc
 
+" marks
+mX  " creates a mark X at current context (where X is [a-zA-Z]).
+'X  " go to mark X.
+
+" folding
+vzf  " creates a fold for visually selected lines.
+za  " toggles openong/closing of fold under cursor.
+zk  " jump to previous fold.
+zj  " jump to next fold.
+zd  " delete fold under cursor.
+zE  " delete all folds.
