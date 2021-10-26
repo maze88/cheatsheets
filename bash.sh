@@ -74,4 +74,4 @@ youtube-dl -x --audio-format mp3 --audio-quality 0 https://www.youtube.com/watch
 youtube-dl -F https://www.youtube.com/watch?v=ID  # list all available formats of requested video.
 youtube-dl -f X https://www.youtube.com/watch?v=ID  # download video in format X (from `-F` list).
 COMMAND | nc termbin.com 9999  # returns url to COMMAND's output for sharing with others.
-
+catt cast https://www.youtube.com/watch?v=u3T7hmLthUU  # casts video/file to chromecast device (other sub-commands include play_toggle, stop, status, and more...). get it with `pip3 install catt`.
