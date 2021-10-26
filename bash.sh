@@ -49,6 +49,7 @@ shuf -i 1-6 -n 1  # roll a die.
 exec > >(tee -i FILEPATH) 2>&1  # redirect a script's stdout & stderr to FILEPATH for logging.
 COMMAND | tee FILE  # runs COMMAND and directs output to stdout and to FILE (can be file or another program).
 crunch 6 6 0123456789 -t maze%%  # returns all length 5-6 combinations of pattern mazeXX (followed by digits).
+unset ENV_VAR_NAME  # delete variable ENV_VAR_NAME
 
 # opensll
 openssl x509 -req -in example.com.csr -CA my-ca.crt -CAkey my-ca.key -CAcreateserial -days 365 -out example.com.crt  # sign example.com.csr with my-ca.key
