@@ -54,7 +54,7 @@ unset ENV_VAR_NAME  # delete variable ENV_VAR_NAME
 # opensll
 openssl x509 -req -in example.com.csr -CA my-ca.crt -CAkey my-ca.key -CAcreateserial -days 365 -out example.com.crt  # sign example.com.csr with my-ca.key
 openssl x509  -in CERTIFICATE_FILE -text -noout  # output the contents of CERTIFICATE_FILE.
-openssl rand -base64 15  # generate a password of length 15 bytes.
+openssl rand -hex 16  # generate a random 16 byte hex strins.
 openssl s_client -showcerts -tls1_2 -debug HOST:PORT  # for troubleshooting/examining tls certs
 certbot certonly --webroot --webroot-path /var/www/html/ --renew-by-default --email michael.52@msn.com --text --agree-tos -d maze88.dev  # renewal of certificate for ssl with let's encrypt over cdn.
 
