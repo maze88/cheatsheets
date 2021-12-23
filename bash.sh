@@ -40,7 +40,7 @@ curl ifconfig.me  # API that returns my outward facing IP.
 lsof -i [i]  # list all open file/connections with matching internat address [i].
 
 # bash & scripting
-set -euo  # at start of bash script, exit on errors, undefined variables and broken pipes.
+set -euo  # when placed at start of bash script will exit on errors, undefined variables or broken pipes.
 $(( expression to calculates ))  # [numerically ]evaluates expression.
 ${string:position:length}  # Extracts substring from `$string` of length `$length` at `$position`.
 echo -e '\e[31mTEXT'  # prints TEXT in red (1=bold, 31-37=colors, etc.).
