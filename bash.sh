@@ -50,6 +50,7 @@ exec > >(tee -i FILEPATH) 2>&1  # redirect a script's stdout & stderr to FILEPAT
 COMMAND | tee FILE  # runs COMMAND and directs output to stdout and to FILE (can be file or another program).
 crunch 6 6 0123456789 -t maze%%  # returns all length 5-6 combinations of pattern mazeXX (followed by digits).
 unset ENV_VAR_NAME  # delete variable ENV_VAR_NAME
+SIZE=10000; \ls -l | cut -d ' ' -f 5- | awk '{if($1 > S) print $5}' S=${SIZE}  # list filenames (column 5) if their size in bytes (column 1) is greater than 10000.
 
 # opensll
 openssl x509 -req -in example.com.csr -CA my-ca.crt -CAkey my-ca.key -CAcreateserial -days 365 -out example.com.crt  # sign example.com.csr with my-ca.key
