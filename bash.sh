@@ -33,7 +33,7 @@ unzip STUFF.zip  # extracts contents of STUFF.zip to current folder.
 nc -lp PORT  # listens on port PORT for connections.
 nc -vz HOST PORT  # checks if host HOST listens for connection on port PORT
 apt install -y iputils-ping  # install ping with apt.
-sudo tcpdump -i any net 10.0.0.0/24 and port 80  # dump packets from/to network 10.0.0.0/24 on port 80, traveling through any network interface.
+sudo tcpdump -i any -A net 10.0.0.0/24 and port 80  # dump packets (in [A]scii) from/to network 10.0.0.0/24 on port 80, traveling through any network interface.
 lsof -i 4tcp:443  # list open connections using [in example] IPv4, TCP protocol, and port 443.
 curl v4.ifconfig.co  # API that returns my outward facing IP; add /country for country.
 curl ifconfig.me  # API that returns my outward facing IP.
