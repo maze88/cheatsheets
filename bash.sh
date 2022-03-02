@@ -53,8 +53,9 @@ unset ENV_VAR_NAME  # delete variable ENV_VAR_NAME
 SIZE=10000; \ls -l | cut -d ' ' -f 5- | awk '{if($1 > S) print $5}' S=${SIZE}  # list filenames (column 5) if their size in bytes (column 1) is greater than 10000.
 sed -Ei "s/(LINE X)/\1\nLINE Y/" FILENAME  # adds LINE Y under LINE X in file FILENAME.
 sed -i '2i BBB' FILENAME  # inserts BBB to line 2 of file FILENAME.
+envsubst < TEMPLATE_FILE  # prints TEMPLATE_FILE after substituting any `${VAR}`s in it with the values from exported environment variables.
 
-# opensll
+# openssl
 openssl x509 -req -in example.com.csr -CA my-ca.crt -CAkey my-ca.key -CAcreateserial -days 365 -out example.com.crt  # sign example.com.csr with my-ca.key
 openssl x509  -in CERTIFICATE_FILE -text -noout  # output the contents of CERTIFICATE_FILE.
 openssl rand -hex 16  # generate a random 16 byte hex strins.
