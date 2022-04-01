@@ -10,3 +10,4 @@ git config --global commit.gpgsign true  # configure git to always sign commits.
 git config --global user.signingkey LONG_KEY_ID  # configure git to sign commits with id LONG_KEY_ID.
 git commit --ammend --no-edit  # update the last *local* commit, without changing its message (remember to `git add` first).
 git remote set-url origin https://ghp_XXXyourGitHubPersonalAccessTokenXXX@github.com/github_username/repository.git  # change remote to use a github personal access token for authentication.
+git reset --hard COMMIT_ID  # moves current branch (pointer) to COMMIT_ID, *discarding* anything the came after COMMIT_ID(!).
