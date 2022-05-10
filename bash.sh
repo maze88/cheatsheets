@@ -13,6 +13,7 @@ gnome-session-quit  # lock session.
 echo $XDG_SESSION_TYPE  # check diplay server type
 sudo sed -i -E 's/.+(set bell-style none)/\1/' /etc/inputrc  # disable annoying bell in bash.
 xhost +SI:localuser:root  # allow root to run gui based apps in wayland.
+# system tray icons (steam, keypass, etc.) can be displayed using the extension from: https://extensions.gnome.org/extension/1503/tray-icons/
 
 # files
 rename -v 's/OLD/NEW/' **  # substitute all OLD to NEW in all (**) files and folders here. Use -n for dry-run.
