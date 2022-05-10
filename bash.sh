@@ -18,6 +18,8 @@ xhost +SI:localuser:root  # allow root to run gui based apps in wayland.
 rename -v 's/OLD/NEW/' **  # substitute all OLD to NEW in all (**) files and folders here. Use -n for dry-run.
 shred -uz -v FILE  # unrecoverably remove FILE, verbosely.
 tail -n +2  # outputs from the 2nd line and below.
+qpdf --password=1234 --decrypt IN.pdf OUT.pdf  # decrypt `IN.pdf` with password '1234' and save as an unencrypted `OUT.pdf`.
+ffmpeg -i BIG_VIDEO.mp4 -ss 05:12 -to 35:59 -c:v libx264 -crf 18 -vf scale=640:-1 SMALL_VIDEO.mp4  # cuts BIG_VIDEO.mp4 to between 05:12 to 35:59 and resizes resolution to 640p, saving output to SMALL_VIDEO.mp4.
 
 # compressed files
 tar -xvzf ARCHIVE.tar.gz  # eXtract ARCHIVE.tar.gz's contents with tar and gunzip.
@@ -38,6 +40,9 @@ lsof -i 4tcp:443  # list open connections using [in example] IPv4, TCP protocol,
 curl v4.ifconfig.co  # API that returns my outward facing IP; add /country for country.
 curl ifconfig.me  # API that returns my outward facing IP.
 lsof -i [i]  # list all open file/connections with matching internat address [i].
+
+# dns
+nslookup -q=txt DOMAIN  # query DNS for TXT records for DOMAIN.
 
 # bash & scripting
 set -euo  # when placed at start of bash script will exit on errors, undefined variables or broken pipes.
