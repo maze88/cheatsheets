@@ -1,5 +1,5 @@
 # k8s
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml  # setup monitoring with metrics-server, then can use `kubectl top ...`.
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml  # setup monitoring with metrics-server, then can use `kubectl top ...`.
 kubectl get pods -o custom-columns='NAME:metadata.name,IMAGE:spec.containers[*].image'  # list images used in all containers in all pods.
 kubectl get svcs -o custom-columns='NAME:metadata.name,PORTS:.spec.ports[*].port' svc  # get all external ports of all services.
 kubectl patch configmap www -p "$(cat patch.yaml)"  # applied changes in patch.yaml to configmap 'www'.

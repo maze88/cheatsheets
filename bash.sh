@@ -23,8 +23,9 @@ qpdf --password=1234 --decrypt IN.pdf OUT.pdf  # decrypt `IN.pdf` with password 
 ffmpeg -i BIG_VIDEO.mp4 -ss 05:12 -to 35:59 -c:v libx264 -crf 18 -vf scale=640:-1 SMALL_VIDEO.mp4  # cuts BIG_VIDEO.mp4 to between 05:12 to 35:59 and resizes resolution to 640p, saving output to SMALL_VIDEO.mp4.
 
 # compressed files
-tar -xvzf ARCHIVE.tar.gz  # eXtract ARCHIVE.tar.gz's contents with tar and gunzip.
-tar -C ./EXISTING_FOLDER -xvzf TARBALL.tar.gz  # extract tarball TARBALL to EXISTING_FOLDER.
+tar -cf ARCHIVE.tar FILE1 FILE2 DIR1 # create ARCHIVE.tar which contains FILE1 FILE2 and DIR1.
+tar -xf ARCHIVE.tar  # extract from file ARCHIVE.tar. can add `-v` for verbose and `-z` for gunzip.
+tar -C ./EXISTING_FOLDER -zxf TARBALL.tar.gz  # extract tarball TARBALL to EXISTING_FOLDER.
 gunzip ARCHIVE.gz  # unzip gzip ARCHIVE.
 bunzip2 ARCHIVE  # unzip ARCHIVE.
 zip STUFF.zip A B C  # zips all local files A, B and C into STUFF.zip.
